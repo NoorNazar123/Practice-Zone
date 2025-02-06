@@ -1,38 +1,117 @@
+/* Global reset for padding, margin, and box-sizing */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
+/* Base styles for HTML and body */
 html,
 body {
   width: 100%;
-  height: 100%; /* Ensure full viewport height */
+  height: 100%;
   font-size: 100%; /* 1rem = 10px */
-  line-height: 1.5; /* Better readability */
-  -webkit-font-smoothing: antialiased; /* Smoother fonts */
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Modern font stack */
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #333; /* Default text color */
+  background-color: #f8f8f8; /* Light background for the entire page */
 }
 
-/* Remove default list styles */
-ul,
-ol {
-  list-style: none;
+/* Main container for the product list */
+.product-list-container {
+  padding: 2rem; /* Increased padding for better spacing */
+  background-color: #ffffff; /* White background for the container */
+  border-radius: 12px; /* Slightly larger radius for a modern look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Deeper shadow for depth */
+  max-width: 1200px;
+  margin: 2rem auto; /* Center the container with more vertical spacing */
 }
 
-/* Remove default anchor styles */
-a {
-  text-decoration: none;
-  color: inherit; /* Inherit text color */
+/* Title of the product section */
+.product-list-container__title {
+  font-size: 2.5rem; /* Larger font size for emphasis */
+  font-weight: 700; /* Bolder font weight */
+  color: #222; /* Darker color for better contrast */
+  margin-bottom: 2rem; /* Increased margin for better spacing */
+  text-align: center;
+  text-transform: uppercase; /* Uppercase for a bold, modern look */
+  letter-spacing: 1px; /* Slight letter spacing for elegance */
 }
 
-/* Optional: Add a global focus outline for accessibility */
-:focus {
-  outline: 2px solid blue;
-  outline-offset: 2px;
+/* Flex container to hold products in a row */
+.product-list-container__grid {
+  display: flex;
+  justify-content: center; /* Center all items */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  gap: 2rem; /* Increased gap for better spacing */
+}
+
+/* Individual product item */
+.product-item {
+  background-color: white;
+  padding: 1.5rem; /* Slightly reduced padding for a tighter look */
+  border-radius: 12px; /* Consistent with the container's radius */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px; /* Limit the width of each product card */
+  width: 100%; /* Ensure it takes full width on smaller screens */
+  margin-bottom: 1.5rem; /* Consistent spacing */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover effect for product items */
+.product-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Styling for the product image */
+.product-item__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Slightly larger radius for a modern look */
+  margin-bottom: 1.5rem; /* Increased margin for better spacing */
+  object-fit: cover; /* Ensure images cover the area nicely */
+}
+
+/* Styling for the product title */
+.product-item__title {
+  font-size: 1.25rem; /* Slightly larger font size */
+  font-weight: 600; /* Bold font weight */
+  color: #222; /* Darker color for better contrast */
+  text-transform: capitalize;
+  margin: 0 0 1rem; /* Consistent margin */
+  word-wrap: break-word; /* Ensure long titles wrap if necessary */
+}
+
+/* Optional: Add a subtle border to the product item */
+.product-item {
+  border: 1px solid #e0e0e0; /* Light border for definition */
+}
+
+/* Optional: Add a call-to-action button for each product */
+.product-item__button {
+  background-color: #007bff; /* Primary color */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.product-item__button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
 }
